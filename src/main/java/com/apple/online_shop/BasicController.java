@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Controller
 public class BasicController {
     @GetMapping("/") // 누가 메인페이지에 접속하면
@@ -22,5 +25,15 @@ public class BasicController {
     @ResponseBody
     String mypage() {
         return "마이페이지 입니다.";
+    }
+
+    @GetMapping("/date")
+    @ResponseBody
+    String now_date() {
+        LocalDate now_date = LocalDate.now();
+        LocalTime now_time = LocalTime.now();
+
+        String return_str = now_date.toString() + " " + now_time.toString();
+        return return_str; // @ResponseBody는 기본적으로 문자열 또는 JSON 형태로 응답을 보내야 함.
     }
 }
