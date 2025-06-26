@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BasicController {
     @GetMapping("/") // 누가 메인페이지에 접속하면
-    @ResponseBody
     String hello() {
-        return "안녕하세요~ 기본 페이지 입니다."; // "안녕하세요" 띄우기
+        // 기본 경로가 static 폴더임
+        return "index.html"; // "안녕하세요" 띄우기
     }
 
     @GetMapping("/about")
-    @ResponseBody
+    @ResponseBody // return 문자 그대로 보내주세요.
     String about() {
         return "상세 페이지 입니다.";
     }
