@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 
 @Controller
 public class BasicController {
@@ -30,10 +31,6 @@ public class BasicController {
     @GetMapping("/date")
     @ResponseBody
     String now_date() {
-        LocalDate now_date = LocalDate.now();
-        LocalTime now_time = LocalTime.now();
-
-        String return_str = now_date.toString() + " " + now_time.toString();
-        return return_str; // @ResponseBody는 기본적으로 문자열 또는 JSON 형태로 응답을 보내야 함.
+        return ZonedDateTime.now().toString(); // @ResponseBody는 기본적으로 문자열 또는 JSON 형태로 응답을 보내야 함.
     }
 }
