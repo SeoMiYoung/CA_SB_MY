@@ -11,3 +11,6 @@
 | `perf`     | 성능 개선                   | `perf: DB 쿼리 속도 개선`           |
 | `ci`       | CI 설정 관련                | `ci: GitHub Actions 배포 설정 추가` |
 | `build`    | 빌드 관련 변경사항              | `build: JDK 버전 변경`            |
+
+
+- `chore`: 공부용 테스트, 끄적임 
