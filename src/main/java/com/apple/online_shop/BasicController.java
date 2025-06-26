@@ -33,4 +33,6 @@ public class BasicController {
     String now_date() {
         return ZonedDateTime.now().toString(); // @ResponseBody는 기본적으로 문자열 또는 JSON 형태로 응답을 보내야 함.
     }
+
+
 }
