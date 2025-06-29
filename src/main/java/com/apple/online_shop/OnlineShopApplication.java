@@ -14,6 +14,14 @@ public class OnlineShopApplication {
 		System.out.println(p1.name);
 		System.out.println(p2.name);
 
+		BasicInfo bi = new BasicInfo("서미영", 20);
+		bi.changeAge(25);
+		bi.incrementAge();
+
+		System.out.println("이름: " + bi.getName());
+		System.out.println("최종 나이: " + bi.getAge());
+
+
 	}
 
 }
