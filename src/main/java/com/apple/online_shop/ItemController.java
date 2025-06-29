@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.SQLOutput;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 // 상품 관련 API들 (비슷한 API들은 파일로 묶어놓는게 좋음)
 @Controller
@@ -17,8 +18,8 @@ public class ItemController {
 
     @GetMapping("/list")
     String show_list(Model model) {
-        var result = itemRepository.findAll();  // 테이블의 모든 데이터를 가져다 줌
-        System.out.println(result);
+        List<Item> result = itemRepository.findAll();  // 테이블의 모든 데이터를 가져다 줌
+        System.out.println(result.get(0));
         model.addAttribute("name", "홍길동");
         return "list.html"; // @ResponseBody는 기본적으로 문자열 또는 JSON 형태로 응답을 보내야 함.
     }
